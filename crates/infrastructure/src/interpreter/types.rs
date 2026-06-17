@@ -10,7 +10,7 @@ pub struct NestedIdentifier {
 
 impl Display for Identifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", self.name)
+        write!(f, "Identifier({})", self.name)
     }
 }
 
@@ -38,6 +38,13 @@ impl NestedIdentifier {
 
 impl Display for NestedIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        todo!()
+        let children_display: String = self
+            .keys
+            .iter()
+            .map(|ident| ident.to_string())
+            .collect::<Vec<String>>()
+            .join(".");
+
+        writeln!(f, "NestedIdentifier({})", children_display)
     }
 }
