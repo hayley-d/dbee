@@ -1,6 +1,7 @@
 pub mod comparison_expression;
 pub mod identifier;
 pub mod literal;
+pub mod logical_expression;
 pub mod nested_identifier;
 pub mod operator;
 pub mod regex;
