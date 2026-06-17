@@ -1,6 +1,8 @@
+pub mod binary_expression;
 pub mod identifier;
 pub mod literal;
 pub mod nested_identifier;
+pub mod operator;
 pub mod regex;
 
 pub use identifier::Identifier;
