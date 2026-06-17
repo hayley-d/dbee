@@ -2,7 +2,7 @@
 //! Knows every layer so it can wire concrete repositories into services.
 
 use application::UserService;
-use domain::{CreateUser, GetUserName};
+use domains::{CreateUser, GetUserName};
 use infrastructure::{UserId, UserRepository};
 
 /// A "controller" — in a real app this would be an axum/actix handler.
@@ -18,7 +18,10 @@ fn main() {
     let repo = UserRepository::default();
     let service = UserService { repo: &repo };
 
-    service.handle_create(CreateUser { id: UserId(1), name: "Ada".into() });
+    service.handle_create(CreateUser {
+        id: UserId(1),
+        name: "Ada".into(),
+    });
 
     // "Route" dispatch.
     println!("{}", get_user_name_controller(&service, 1));

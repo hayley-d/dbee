@@ -34,5 +34,7 @@ pub mod repositories {
 }
 
 // Convenience re-exports for outer layers.
+pub mod interpreter;
+
 pub use models::{User, UserId};
 pub use repositories::UserRepository;
