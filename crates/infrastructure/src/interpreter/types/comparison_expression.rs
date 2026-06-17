@@ -2,13 +2,13 @@ use std::fmt::Display;
 
 use crate::interpreter::types::{Literal, NestedIdentifier, operator::Operator};
 
-pub struct BinaryExpression {
+pub struct ComparisonExpression {
     left: NestedIdentifier,
     operator: Operator,
     right: Literal,
 }
 
-impl BinaryExpression {
+impl ComparisonExpression {
     pub fn new(left: NestedIdentifier, operator: Operator, right: Literal) -> Self {
         Self {
             left,
@@ -18,11 +18,11 @@ impl BinaryExpression {
     }
 }
 
-impl Display for BinaryExpression {
+impl Display for ComparisonExpression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         writeln!(
             f,
-            "BinaryExpression({} {} {})",
+            "ComparisonExpression({} {} {})",
             self.left, self.operator, self.right
         )
     }
