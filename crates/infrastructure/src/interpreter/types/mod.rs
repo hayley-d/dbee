@@ -1,14 +1,21 @@
 pub mod comparison_expression;
+pub mod get_expression;
 pub mod identifier;
 pub mod literal;
 pub mod logical_expression;
 pub mod nested_identifier;
+pub mod not_expression;
 pub mod operator;
 pub mod regex;
+pub mod set_expression;
 
 pub use comparison_expression::ComparisonExpression;
+pub use get_expression::GetExpression;
 pub use identifier::Identifier;
 pub use literal::Literal;
+pub use logical_expression::LogicalExpression;
 pub use nested_identifier::NestedIdentifier;
+pub use not_expression::NotExpression;
 pub use operator::Operator;
 pub use regex::Regex;
+pub use set_expression::SetExpression;

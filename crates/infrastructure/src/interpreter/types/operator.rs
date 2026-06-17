@@ -9,6 +9,11 @@ pub enum Operator {
     Star,
     Plus,
     Minus,
+    And,
+    Or,
+    Not,
+    Set,
+    Get,
 }
 
 impl Display for Operator {
@@ -22,6 +27,11 @@ impl Display for Operator {
             Operator::Star => writeln!(f, "*"),
             Operator::Plus => writeln!(f, "+"),
             Operator::Minus => writeln!(f, "-"),
+            Operator::And => writeln!(f, "&&"),
+            Operator::Or => writeln!(f, "||"),
+            Operator::Not => writeln!(f, "NOT"),
+            Operator::Set => writeln!(f, "SET"),
+            Operator::Get => writeln!(f, "GET"),
         }
     }
 }
