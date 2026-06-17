@@ -1,0 +1,9 @@
+[package]
+name = "domains"
+version.workspace = true
+edition.workspace = true
+
+# Defines commands and queries. May depend inward on infrastructure
+# (models/repositories), but nothing outward.
+[dependencies]
+infrastructure.workspace = true

@@ -1,0 +1,8 @@
+[package]
+name = "infrastructure"
+version.workspace = true
+edition.workspace = true
+
+# Innermost layer: models and repositories. Depends on NOTHING in the
+# workspace. Every other layer points inward toward here.
+[dependencies]

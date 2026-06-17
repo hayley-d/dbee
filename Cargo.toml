@@ -1,0 +1,20 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/domains",
+    "crates/application",
+    "crates/infrastructure",
+    "crates/presentation",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+# Shared dependency versions live here so every crate stays in lockstep.
+# The path entries also define the *allowed* dependency direction: a crate
+# can only `use` another layer if it lists it in its own [dependencies].
+[workspace.dependencies]
+domains = { path = "crates/domains" }
+application = { path = "crates/application" }
+infrastructure = { path = "crates/infrastructure" }

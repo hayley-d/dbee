@@ -1,0 +1,13 @@
+[package]
+name = "presentation"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "dbee"
+path = "src/main.rs"
+
+[dependencies]
+domains.workspace = true
+application.workspace = true
+infrastructure = { path = "../infrastructure" }

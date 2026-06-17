@@ -1,0 +1,10 @@
+[package]
+name = "application"
+version.workspace = true
+edition.workspace = true
+
+# Defines services. Orchestrates domain commands/queries against
+# infrastructure repositories. Depends inward only.
+[dependencies]
+domains.workspace = true
+infrastructure.workspace = true
