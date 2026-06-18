@@ -1,6 +1,7 @@
 pub mod comparison_expression;
 pub mod get_expression;
 pub mod identifier;
+pub mod keywords;
 pub mod literal;
 pub mod logical_expression;
 pub mod nested_identifier;
@@ -14,6 +15,7 @@ pub use get_expression::Expr;
 pub use get_expression::GetExpression;
 pub use identifier::Ident;
 pub use identifier::Identifier;
+pub use keywords::Keyword;
 pub use literal::Literal;
 pub use logical_expression::LogicalExpression;
 pub use nested_identifier::NestedIdentifier;
