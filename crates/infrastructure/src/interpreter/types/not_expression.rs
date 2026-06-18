@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-use crate::interpreter::types::{ComparisonExpression, Ident};
+use crate::interpreter::types::{ComparisonExpression, Expr, Ident};
 
 pub struct NotExpression<Identifier: Ident + Display> {
     expression: ComparisonExpression<Identifier>,
@@ -17,3 +17,5 @@ impl<Identifier: Ident + Display> Display for NotExpression<Identifier> {
         writeln!(f, "NotExpression({})", self.expression)
     }
 }
+
+impl<Identifier: Ident + Display> Expr for NotExpression<Identifier> {}
