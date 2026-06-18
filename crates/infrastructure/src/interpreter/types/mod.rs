@@ -1,4 +1,5 @@
 pub mod comparison_expression;
+pub mod delete_expression;
 pub mod get_expression;
 pub mod identifier;
 pub mod keywords;
@@ -9,6 +10,7 @@ pub mod not_expression;
 pub mod operator;
 pub mod regex;
 pub mod set_expression;
+pub mod update_expression;
 
 pub use comparison_expression::ComparisonExpression;
 pub use get_expression::Expr;
@@ -23,3 +25,4 @@ pub use not_expression::NotExpression;
 pub use operator::Operator;
 pub use regex::Regex;
 pub use set_expression::SetExpression;
+pub use update_expression::UpdateExpression;
