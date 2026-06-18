@@ -1,18 +1,20 @@
 use std::fmt::Display;
 
-use crate::interpreter::types::{ComparisonExpression, Operator};
+use crate::interpreter::types::{ComparisonExpression, Expr, Ident, Operator};
 
-pub struct LogicalExpression {
-    left: ComparisonExpression,
+pub struct LogicalExpression<IdentifierLeft: Ident + Display, IdentifierRigt: Ident + Display> {
+    left: ComparisonExpression<IdentifierLeft>,
     operator: Operator,
-    right: ComparisonExpression,
+    right: ComparisonExpression<IdentifierRigt>,
 }
 
-impl LogicalExpression {
+impl<IdentifierLeft: Ident + Display, IdentifierRigt: Ident + Display>
+    LogicalExpression<IdentifierLeft, IdentifierRigt>
+{
     pub fn new(
-        left: ComparisonExpression,
+        left: ComparisonExpression<IdentifierLeft>,
         operator: Operator,
-        right: ComparisonExpression,
+        right: ComparisonExpression<IdentifierRigt>,
     ) -> Self {
         Self {
             left,
@@ -22,7 +24,9 @@ impl LogicalExpression {
     }
 }
 
-impl Display for LogicalExpression {
+impl<IdentifierLeft: Ident + Display, IdentifierRigt: Ident + Display> Display
+    for LogicalExpression<IdentifierLeft, IdentifierRigt>
+{
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         writeln!(
             f,
@@ -30,4 +34,9 @@ impl Display for LogicalExpression {
             self.left, self.operator, self.right
         )
     }
+}
+
+impl<IdentifierLeft: Ident + Display, IdentifierRigt: Ident + Display> Expr
+    for LogicalExpression<IdentifierLeft, IdentifierRigt>
+{
 }

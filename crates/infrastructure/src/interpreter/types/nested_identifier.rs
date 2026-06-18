@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+use crate::interpreter::types::Ident;
+
 use super::identifier::Identifier;
 
 pub struct NestedIdentifier {
@@ -32,3 +34,5 @@ impl Display for NestedIdentifier {
         writeln!(f, "NestedIdentifier({})", children_display)
     }
 }
+
+impl Ident for NestedIdentifier {}

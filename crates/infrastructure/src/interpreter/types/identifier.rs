@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+pub trait Ident {}
+
 pub struct Identifier {
     pub name: String,
 }
@@ -9,6 +11,8 @@ impl Display for Identifier {
         write!(f, "Identifier({})", self.name)
     }
 }
+
+impl Ident for Identifier {}
 
 impl Identifier {
     pub fn new(name: &str) -> Self {

@@ -10,7 +10,9 @@ pub mod regex;
 pub mod set_expression;
 
 pub use comparison_expression::ComparisonExpression;
+pub use get_expression::Expr;
 pub use get_expression::GetExpression;
+pub use identifier::Ident;
 pub use identifier::Identifier;
 pub use literal::Literal;
 pub use logical_expression::LogicalExpression;
